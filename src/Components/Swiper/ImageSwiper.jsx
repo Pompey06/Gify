@@ -23,16 +23,19 @@ const groupImages = (images, chunkSize) => {
   return groups;
 };
 
-const groupedImages = groupImages(images, 3);
+// const groupedImages = groupImages(images, 3);
 
 const ImageSwiper = () => {
   return (
     <CustomSwiper
-      slidesPerView={1}
+      slidesPerView={3}
+      slidesPerView1024={2}
+      slidesPerView1600={3}
+      
       navigation={false}  // Убираем стрелки
       pagination={{ clickable: true }}
     >
-      {groupedImages.map((group, index) => (
+      {/* {groupedImages.map((group, index) => (
         <div key={index} className="slide-group">
           {group.map((img, idx) => (
             <img
@@ -43,7 +46,17 @@ const ImageSwiper = () => {
             />
           ))}
         </div>
-      ))}
+      ))} */}
+      {
+        images.map((img, idx) => (
+          <img
+            key={idx}
+            src={img.src}
+            alt={img.alt}
+            className="group-image"
+          />
+        ))
+      }
     </CustomSwiper>
   );
 };

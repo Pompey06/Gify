@@ -37,16 +37,22 @@ const reviews = [
     author: 'CEO of GreenTech Solutions'
   },
   {
-    name: 'John Smith',
-    text: 'Рекомендую!',
-    rating: 4.8,
-    author: 'Мария'
+    name: 'Emily Davis',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    rating: 5.0,
+    author: 'CEO of GreenTech Solutions'
   },
   {
-    name: 'Alice Brown',
-    text: 'Все понравилось.',
-    rating: 4.9,
-    author: 'Иван'
+    name: 'Emily Davis',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    rating: 5.0,
+    author: 'CEO of GreenTech Solutions'
+  },
+  {
+    name: 'Emily Davis',
+    text: 'Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text',
+    rating: 5.0,
+    author: 'CEO of GreenTech Solutions'
   },
 ];
 
@@ -56,6 +62,8 @@ const ReviewSwiper = () => {
       <img src={leftBg} alt="left bg" className="feedback-image feedback-image_left" />
       <CustomSwiper
         slidesPerView={5}
+        slidesPerView1024={3}
+        slidesPerView1600={3}
         navigation={true}
         pagination={{ clickable: true }}
       >

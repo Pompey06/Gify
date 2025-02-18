@@ -10,16 +10,21 @@
 .feedback-image {
   position: absolute;
   top: 0;
-  left: -40vw;
-  width: auto;
+  left: -30%;
+  width: 50%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   z-index: 2;
 }
 
+@media (max-width: 1600px) {
+  .feedback-image {
+    display: none;
+  }
+}
 
 .feedback-image_right {
-  right: -40vw;
+  right: -30%;
   left: auto;
 }
 
@@ -28,6 +33,24 @@
   display: none;
 }
 
+.feedback .swiper {
+  height: 100% !important;
+  padding-bottom: 100px !important;
+}
+
 .feedback .swiper-pagination {
-  position: relative;
+  position: relative !important;
+  bottom: 0 !important;
+  top: 0 !important;
+  padding-top: 20px !important;
+}
+
+.feedback .swiper {
+  overflow: visible;
+}
+
+.group-image {
+  border-radius: 32px;
+  height: 500px !important;
+  margin-bottom: 20px;
 }

@@ -8,22 +8,23 @@ import 'swiper/css/bundle';
 const CustomSwiper = ({
   children,
   slidesPerView = 1,
+  slidesPerView1024 = 1,
+  slidesPerView1600 = 1,
   spaceBetween = 10,
   navigation = true,
   pagination = { clickable: true },
-  autoplay = false, // Изменено с null на false
+  autoplay = false, 
   ...rest
 }) => {
   if (!children || React.Children.count(children) === 0) {
     return null;
   }
 
-  // Если autoplay равен true, создаем объект конфигурации
   const autoplayConfig = autoplay === true 
     ? { delay: 3000, disableOnInteraction: false }
     : autoplay === false 
       ? false 
-      : autoplay; // Если передан объект конфигурации, используем его
+      : autoplay;
 
   return (
     <Swiper
@@ -33,6 +34,23 @@ const CustomSwiper = ({
       navigation={navigation}
       pagination={pagination}
       autoplay={autoplayConfig}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        767: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: slidesPerView1024,
+        },
+        1600: {
+          slidesPerView: slidesPerView1600,
+        },
+        1601: {
+          slidesPerView: slidesPerView,
+        },
+      }}
       {...rest}
     >
       {React.Children.map(children, (child) => (
