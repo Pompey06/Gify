@@ -14,14 +14,13 @@ const images = [
   { src: slideImg, alt: 'Изображение 9' },
 ];
 
-// Функция для группировки массива на подмассивы по 3 элемента
-const groupImages = (images, chunkSize) => {
-  const groups = [];
-  for (let i = 0; i < images.length; i += chunkSize) {
-    groups.push(images.slice(i, i + chunkSize));
-  }
-  return groups;
-};
+//const groupImages = (images, chunkSize) => {
+//  const groups = [];
+//  for (let i = 0; i < images.length; i += chunkSize) {
+//    groups.push(images.slice(i, i + chunkSize));
+//  }
+//  return groups;
+//};
 
 // const groupedImages = groupImages(images, 3);
 

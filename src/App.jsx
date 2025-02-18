@@ -1,6 +1,6 @@
 import './App.css'
-import { useState } from 'react';
-import Copyable from './Components/Copyable';
+//import { useState } from 'react';
+//import Copyable from './Components/Copyable';
 import x from './assets/x.svg'
 import tg from './assets/tg.svg'
 import screen from './assets/screen.svg'
@@ -31,15 +31,20 @@ import TitleButton from './Components/TitleButton/TitleButton';
    import phase5 from './assets/05.svg'
    import footer__logo from './assets/footer__logo.png'
    //import roadmap from './assets/roadmap__bg.png'
-
+   import documents from './assets/book.svg'
+   import footer__tg from './assets/footer__tg.svg'
+   import footer__x from './assets/footer__x.svg'
+   import faq from './assets/faq.png'
+   import arrow from './assets/arrow.svg'
+   import arrow_active from './assets/active__arrow.svg'
 
 function App() {
-   const [showModal, setShowModal] = useState(false);
+   //const [showModal, setShowModal] = useState(false);
 
-   const handleCopySuccess = () => {
-     setShowModal(true);
-     setTimeout(() => setShowModal(false), 2000);
-   };
+   //const handleCopySuccess = () => {
+   //  setShowModal(true);
+   //  setTimeout(() => setShowModal(false), 2000);
+   //};
 
    return (
       <>
@@ -208,28 +213,118 @@ function App() {
             <section className="feedback">
                <ReviewSwiper />
            </section>
-         <div className="_container">
-            <footer className="footer">
-               <div className="footer__left">
-                  <img src={footer__logo} alt="" className="footer__logo" />
-                  <p className="footer__text">[your AI agent]</p>
-               </div>
-               <div className="footer__right">
-                  <div className="site__map">
-                     <h4 className="site__map_title">Site Map</h4>
-                     <a href="#" className="site__map_link _scale_hover">Gallery</a>
-                     <a href="#" className="site__map_link _scale_hover">App</a>
-                     <a href="#" className="site__map_link _scale_hover">Roadmap</a>
-                     <a href="#" className="site__map_link _scale_hover">Feedback</a>
-                     <a href="#" className="site__map_link _scale_hover">FAQ</a>
-                  </div>
-               </div>
-            </footer>
-         </div>
+
+           <div className="_container">
+  <section className="faq">
+    <div className="faq__left">
+      <TitleButton
+        title="Frequently Asked Questions"
+        buttonText="FAQ"
+      />
+      <img src={faq} alt="" className="faq__bg" />
+    </div>
+    <div className="faq__right">
+      <div className="spoilers">
+        <div className="spoiler__wrapper">
+          <div className="spoiler">
+            <div className="spoiler__title">
+            Text Text Text Text Text Text Text
+            </div>
+            <img src={arrow} alt="" className="arrow" />
+          </div>
+          <div className="spoiler__content">
+            Al support can shorten development cycles by automating or speeding up many steps in the software development process.
+          </div>
+        </div>
+        <div className="spoiler__wrapper active">
+          <div className="spoiler">
+            <div className="spoiler__title">
+            Text Text Text Text Text Text Text
+            </div>
+            <img src={arrow_active} alt="" className="arrow" />
+          </div>
+          <div className="spoiler__content">
+            Al support can shorten development cycles by automating or speeding up many steps in the software development process.
+          </div>
+        </div>
+        <div className="spoiler__wrapper active">
+          <div className="spoiler">
+            <div className="spoiler__title">
+            Text Text Text Text Text Text Text
+            </div>
+            <img src={arrow_active} alt="" className="arrow" />
+          </div>
+          <div className="spoiler__content">
+            Al support can shorten development cycles by automating or speeding up many steps in the software development process.
+          </div>
+        </div>
+        <div className="spoiler__wrapper active">
+          <div className="spoiler">
+            <div className="spoiler__title">
+            Text Text Text Text Text Text Text
+            </div>
+            <img src={arrow_active} alt="" className="arrow" />
+          </div>
+          <div className="spoiler__content">
+            Al support can shorten development cycles by automating or speeding up many steps in the software development process.
+          </div>
+        </div>
+        <div className="spoiler__wrapper active">
+          <div className="spoiler">
+            <div className="spoiler__title">
+            Text Text Text Text Text Text Text
+            </div>
+            <img src={arrow_active} alt="" className="arrow" />
+          </div>
+          <div className="spoiler__content">
+            Al support can shorten development cycles by automating or speeding up many steps in the software development process.
+          </div>
+        </div>
       </div>
-      <div className={`copied_modal ${showModal ? '_show' : ''}`}>
+    </div>
+  </section>
+  <footer className="footer">
+    <div className="footer__top">
+      <div className="footer__left">
+        <img src={footer__logo} alt="" className="footer__logo" />
+        <p className="footer__text">[your AI agent]</p>
+      </div>
+      <div className="footer__right">
+        <div className="site__map">
+          <h4 className="site__map_title">Site Map</h4>
+          <a href="#" className="site__map_link _scale_hover">Gallery</a>
+          <a href="#" className="site__map_link _scale_hover">App</a>
+          <a href="#" className="site__map_link _scale_hover">Roadmap</a>
+          <a href="#" className="site__map_link _scale_hover">Feedback</a>
+          <a href="#" className="site__map_link _scale_hover">FAQ</a>
+        </div>
+        <div className="site__map resources">
+          <h4 className="site__map_title">Resources</h4>
+          <a href="#" className="site__map_link _scale_hover">
+            <img src={documents} alt="" />
+            Documents
+          </a>
+          <a href="#" className="site__map_link _scale_hover">
+            <img src={footer__tg} alt="" />
+            Telegram
+          </a>
+          <a href="#" className="site__map_link _scale_hover">
+            <img src={footer__x} alt="" />
+            x
+          </a>
+        </div>
+      </div>
+    </div>
+    <div className="footer__bottom">
+      <p className="copyright">© GIFY AI, All Rights Reserved</p>
+    </div>
+  </footer>
+</div>
+
+      </div>
+      {/*<div className={`copied_modal ${showModal ? '_show' : ''}`}>
         copied to clipboard
-      </div>
+      </div>*/}
     </>
   )
 }
