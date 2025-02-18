@@ -167,6 +167,7 @@ function App() {
                  list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
                  icon={phase5}
                  type="left"
+                 isLast={true}
                />
             </div>
             </section>
