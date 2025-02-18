@@ -1,0 +1,136 @@
+/* Контейнер галереи */
+.gallery {
+   width: 100%;
+   margin: 0 auto;
+   padding: 20px;
+ }
+ 
+ /* Стили для контейнера Swiper (по умолчанию класс .swiper применяется к контейнеру) */
+ .swiper {
+   width: 100%;
+   height: 600px; /* задайте нужную высоту */
+ }
+ 
+ /* Стили для каждого слайда */
+ .swiper-slide {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ /* Стили для изображений внутри слайда */
+ .swiper-slide img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover; /* изображение заполнит слайд, сохраняя пропорции */
+ }
+
+ /* Контейнер каждого слайда с группой картинок */
+.slide-group {
+   display: flex;
+   gap: 24px; /* отступы между картинками */
+ }
+ 
+ /* Картинки внутри слайда */
+ .group-image {
+   flex: 1; /* равномерное распределение ширины */
+   object-fit: cover;
+   width: 100%;
+   height: auto;
+ }
+ 
+ /* Перемещаем точки ниже */
+.swiper-pagination {
+   bottom: 15px !important; /* увеличьте значение, чтобы опустить точки ниже */
+ }
+ 
+ /* Стили для обычного кружка */
+ .swiper-pagination-bullet {
+   width: 24px;
+   height: 24px;
+   background: #ccc; /* цвет обычного кружка */
+   opacity: 1; /* делаем полностью непрозрачными */
+   margin: 0 12px !important;
+   transition: background-color 0.3s, transform 0.3s;
+ }
+ 
+ /* Стили для активного кружка */
+ .swiper-pagination-bullet-active {
+   width: 62px;
+   height: 24px;
+   border-radius: 12px;
+background: linear-gradient(95deg, #2A61E8 3.83%, #5B4DE8 35.23%, #FF4D68 89.32%), #050505;
+   transform: scale(1.2); /* немного увеличим активный кружок */
+ }
+
+ .review-card {
+   border-radius: 24px;
+background: #FFF;
+padding: 32px;
+display: flex;
+align-items: center;
+gap: 22px;
+flex-direction: column;
+ }
+
+.rate {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   color: #050505;
+font-family: Satoshi;
+font-size: 20.355px;
+font-style: normal;
+font-weight: 700;
+align-self: start;
+line-height: 150%; /* 30.533px */
+}
+
+ .review-card__text {
+   color: #050505;
+font-family: Satoshi;
+font-size: 20px;
+font-style: normal;
+max-width: 311px;
+
+font-weight: 500;
+line-height: 1.5; /* 150% */
+padding-bottom: 22px;
+border-bottom: 1px solid #F5F5F5;
+ }
+
+.review-card__author {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+
+.review-card__author_info {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+ .review-card__name {
+   color: #050505;
+font-family: Satoshi;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.5; /* 150% */
+ }
+
+ .review-card__avatar {
+   max-width: 77px;
+   border-radius: 50%;
+   max-height: 77px;
+ }
+
+ .review-card__position {
+   color: #848484;
+   font-family: Satoshi;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+ }

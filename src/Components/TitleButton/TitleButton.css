@@ -1,0 +1,40 @@
+.title-button {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+}
+
+.title-button h2 {
+   color: #050505;
+   text-align: center;
+   font-family: "Inter", serif !important;
+   font-size: 60px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 110%;
+   letter-spacing: -2.4px;
+}
+
+.title-button h2 span {
+   color: rgba(5, 5, 5, 0.30);
+}
+
+.title-button__button{
+   color: #F5F5F5;
+   text-align: center;
+   font-family: Satoshi;
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 1.42857; /* 142.857% */
+   letter-spacing: -0.28px;
+   padding: 6px 18px;
+   border-radius: 106.854px;
+   background: linear-gradient(95deg, #5581EF 3.82%, #8078D3 42.41%, #D46878 108.87%);
+   display: inline-block;
+   align-items: center;
+   gap: 15px;
+   max-width: 120px;
+}
