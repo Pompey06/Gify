@@ -202,10 +202,13 @@ function App() {
             title="Feedback"
             buttonText="Feedback"
             />
-            </div>
+           </div>
+         </div>
+           
             <section className="feedback">
                <ReviewSwiper />
-            </section>
+           </section>
+         <div className="_container">
             <footer className="footer">
                <div className="footer__left">
                   <img src={footer__logo} alt="" className="footer__logo" />
@@ -222,9 +225,6 @@ function App() {
                   </div>
                </div>
             </footer>
-            <Copyable onCopySuccess={handleCopySuccess}>
-            Скопируй меня!
-          </Copyable>
          </div>
       </div>
       <div className={`copied_modal ${showModal ? '_show' : ''}`}>
