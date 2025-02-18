@@ -80,3 +80,20 @@
 .roadmap__card_wrapper.right .roadmap__image {
   margin-left: auto;
 }
+
+.spoiler__wrapper * {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.spoiler__wrapper .spoiler__content {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.spoiler__wrapper.active .spoiler__content {
+  opacity: 1;
+  height: auto;
+  visibility: visible;
+}
