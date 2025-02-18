@@ -1,1 +1,33 @@
 
+.feedback {
+  width: 100%;
+}
+
+.feedback-swiper-wrap {
+  position: relative;
+}
+
+.feedback-image {
+  position: absolute;
+  top: 0;
+  left: -40vw;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+
+.feedback-image_right {
+  right: -40vw;
+  left: auto;
+}
+
+.feedback .swiper-button-prev,
+.feedback .swiper-button-next {
+  display: none;
+}
+
+.feedback .swiper-pagination {
+  position: relative;
+}
