@@ -37,6 +37,7 @@ import TitleButton from './Components/TitleButton/TitleButton';
    import faq from './assets/faq.png'
    
 import Spollers from './Components/Spollers'
+import RoadMapItem from './Components/RoadMapItem'
 
 function App() {
    //const [showModal, setShowModal] = useState(false);
@@ -137,69 +138,36 @@ function App() {
             />
             <div className="roadmap">
                {/*<img src={roadmap} alt="" className="roadmap__bg" />*/}
-               <div className="roadmap__card left">
-                  <img src={phase1} alt="" className="roadmap__card_icon" />
-                  <div className="roadmap__card_content">
-                     <h4 className="roadmap__card_title">Phase 1</h4>
-                     <ul className="roadmap__card_list">
-                        <li>White Paper creation</li>
-                        <li>Website launch</li>
-                        <li>MVP development</li>
-                        <li>Social media verification</li>
-                        <li>Pre-launch marketing</li>
-                        <li>Community building</li>
-                        
-                     </ul>
-                  </div>
-               </div>
-               <div className="roadmap__card right">
-                  <img src={phase2} alt="" className="roadmap__card_icon" />
-                  <div className="roadmap__card_content">
-                     <h4 className="roadmap__card_title">Phase 2</h4>
-                     <ul className="roadmap__card_list">
-                        <li>PumpFun token launch</li>
-                        <li>Post-launch marketing</li>
-                        <li>Listings on CMC/CG</li>
-                        <li>AI 3D optimization</li>
-                     </ul>
-                  </div>
-               </div>
-               <div className="roadmap__card left">
-                  <img src={phase3} alt="" className="roadmap__card_icon" />
-                  <div className="roadmap__card_content">
-                     <h4 className="roadmap__card_title">Phase 3</h4>
-                     <ul className="roadmap__card_list">
-                        <li>Second Wave of Major Marketing</li>
-                        <li>Partnerships with AI Devs</li>
-                        <li>Go Global with the Platform</li>
-                        <li>AI Agent in Real Businesses</li>
-                     </ul>
-                  </div>
-               </div>
-               <div className="roadmap__card right">
-                  <img src={phase4} alt="" className="roadmap__card_icon" />
-                  <div className="roadmap__card_content">
-                     <h4 className="roadmap__card_title">Phase 4</h4>
-                     <ul className="roadmap__card_list">
-                        <li>Expand features</li>
-                        <li>Collab with AI agents</li>
-                        <li>Boost algorithms</li>
-                        <li>Grow team & partners</li>
-                     </ul>
-                  </div>
-               </div>
-               <div className="roadmap__card left">
-                  <img src={phase5} alt="" className="roadmap__card_icon" />
-                  <div className="roadmap__card_content">
-                     <h4 className="roadmap__card_title">Phase 5</h4>
-                     <ul className="roadmap__card_list">
-                        <li>Second Wave of Major Marketing</li>
-                        <li>Partnerships with AI Devs</li>
-                        <li>Go Global with the Platform</li>
-                        <li>AI Agent in Real Businesses</li>
-                     </ul>
-                  </div>
-               </div>
+               <RoadMapItem
+                 title="Phase 1"
+                 list={['White Paper creation', 'Website launch', 'MVP development', 'Social media verification', 'Pre-launch marketing', 'Community building']}
+                 icon={phase1}
+                 type="left"
+               />
+               <RoadMapItem
+                 title="Phase 2"
+                 list={['PumpFun token launch', 'Post-launch marketing', 'Listings on CMC/CG', 'AI 3D optimization']}
+                 icon={phase2}
+                 type="right"
+               />
+               <RoadMapItem
+                 title="Phase 3"
+                 list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
+                 icon={phase3}
+                 type="left"
+               />
+               <RoadMapItem
+                 title="Phase 4"
+                 list={['Expand features', 'Collab with AI agents', 'Boost algorithms', 'Grow team & partners']}
+                 icon={phase4}
+                 type="right"
+               />
+               <RoadMapItem
+                 title="Phase 5"
+                 list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
+                 icon={phase5}
+                 type="left"
+               />
             </div>
             </section>
             <div className="feedback__title">
