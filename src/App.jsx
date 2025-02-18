@@ -29,6 +29,7 @@ import TitleButton from './Components/TitleButton/TitleButton';
    import phase3 from './assets/03.svg'
    import phase4 from './assets/04.svg'
    import phase5 from './assets/05.svg'
+   import footer__logo from './assets/footer__logo.png'
    //import roadmap from './assets/roadmap__bg.png'
 
 
@@ -94,7 +95,7 @@ function App() {
             </section>
             <div className="gallery_section">
                <TitleButton
-            title="Gallery"
+            title=""
             title2="GIFY AI"
             buttonText="Gallery"
             />
@@ -205,6 +206,22 @@ function App() {
             <section className="feedback">
                <ReviewSwiper />
             </section>
+            <footer className="footer">
+               <div className="footer__left">
+                  <img src={footer__logo} alt="" className="footer__logo" />
+                  <p className="footer__text">[your AI agent]</p>
+               </div>
+               <div className="footer__right">
+                  <div className="site__map">
+                     <h4 className="site__map_title">Site Map</h4>
+                     <a href="#" className="site__map_link _scale_hover">Gallery</a>
+                     <a href="#" className="site__map_link _scale_hover">App</a>
+                     <a href="#" className="site__map_link _scale_hover">Roadmap</a>
+                     <a href="#" className="site__map_link _scale_hover">Feedback</a>
+                     <a href="#" className="site__map_link _scale_hover">FAQ</a>
+                  </div>
+               </div>
+            </footer>
             <Copyable onCopySuccess={handleCopySuccess}>
             Скопируй меня!
           </Copyable>

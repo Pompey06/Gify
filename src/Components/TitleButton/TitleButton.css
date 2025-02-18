@@ -33,8 +33,8 @@
    padding: 6px 18px;
    border-radius: 106.854px;
    background: linear-gradient(95deg, #5581EF 3.82%, #8078D3 42.41%, #D46878 108.87%);
-   display: inline-block;
+   display: flex;
    align-items: center;
-   gap: 15px;
+   gap: 10px;
    max-width: 120px;
 }
