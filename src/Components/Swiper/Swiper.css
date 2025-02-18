@@ -134,3 +134,36 @@ line-height: 1.5; /* 150% */
    font-weight: 500;
    line-height: normal;
  }
+
+ @media (max-width: 500px) {
+   .review-card {
+      padding: 24px;
+   }
+   .review-card__text {
+      font-size: 15px;
+   }
+   .rate {
+      font-size: 15px;
+   }
+   .review-card__name {
+      font-size: 15px;
+   }
+   .review-card__position {
+      font-size: 14px;
+   }
+   .feedback .swiper {
+      padding-bottom: 50px !important;
+   }
+   .swiper-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 20px; /* расстояние между строками */
+    }
+    .swiper-pagination-bullet {
+      margin-bottom: 10px; /* увеличивает расстояние между строками */
+    }
+    .review-card {
+      max-width: 95vw;
+    }
+ }

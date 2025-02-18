@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import line_left from '../assets/left-line.svg'
 import line_right from '../assets/right-line.svg'
 
@@ -7,6 +8,7 @@ const RoadMapItem = (
   const lineImage = type === 'left' ? line_right : line_left;
 
   return (
+   <>
     <div className={`roadmap__card_wrapper ${type}`} >
       <div className={`roadmap__card ${type}`}>
         <img src={icon} alt="" className="roadmap__card_icon" />
@@ -19,8 +21,12 @@ const RoadMapItem = (
         </ul>
       </div>
       </div>
+      
+      {!isLast && <div className="blue__line"></div>}
       {!isLast && <img src={lineImage} alt="" className="roadmap__image" />}
     </div>
+
+    </>
   )
 }
 export default RoadMapItem;
