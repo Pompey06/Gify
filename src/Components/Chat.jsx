@@ -19,9 +19,13 @@ const Chat = ({ setChatTitle, setChatTitleClass }) => {
 
    const handleFileChange = (e) => {
       const file = e.target.files[0];
-      if (file && file.type.startsWith("image/")) {
+      const allowedTypes = ["image/png", "image/jpg", "image/jpeg", "image/tiff", "image/webp"];
+      if (file && allowedTypes.includes(file.type)) {
          const imageURL = URL.createObjectURL(file);
          setUploadedImage(imageURL);
+      } else {
+         // Файл неподходящего формата — можно уведомить пользователя
+         alert("Unsupported file type. Please upload a PNG, JPG, JPEG, TIFF, or WEBP image.");
       }
    };
 
@@ -134,7 +138,13 @@ const Chat = ({ setChatTitle, setChatTitleClass }) => {
             <img src={uploadedImage || icon} alt="Chat Icon" className={`icon ${uploadedImage ? "uploaded" : ""}`} />
          </div>
          <div className="chat__form">
-            <input id="file" type="file" className="none" onChange={handleFileChange} />
+            <input
+               accept="image/png, image/jpg, image/jpeg, image/tiff, image/webp"
+               id="file"
+               type="file"
+               className="none"
+               onChange={handleFileChange}
+            />
             <label htmlFor="file" className="upload white__button button _scale_hover">
                <img src={upload} alt="" /> Upload
             </label>
