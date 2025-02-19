@@ -26,6 +26,8 @@ import Chat from "./Components/Chat";
 import Header from "./Components/Header";
 import try_svg from "./assets/try.svg";
 import AnimationWrap from "./Components/AnimationWrap";
+import line1 from "./assets/line1.svg";
+import line2 from "./assets/line2.svg";
 function App() {
    //const [showModal, setShowModal] = useState(false);
 
@@ -39,6 +41,7 @@ function App() {
    return (
       <>
          <div className="wrapper bg__wrap">
+            <img src={line1} alt="" className="line1" />
             <div className="content _container">
                <Header />
                <section className="first">
@@ -82,8 +85,9 @@ function App() {
                         </AnimationWrap>
                      </div>
                   </div>
-                  <AnimationWrap delay={0.5} noAnimate className="animation__right_t">
+                  <AnimationWrap delay={0.5} noAnimate className="animation__right_t right__column">
                      <img src={content} alt="" className="main_content" />
+                     <img src={line2} alt="" className="line2" />
                   </AnimationWrap>
                   <AnimationWrap delay={1} noAnimate className="animation__bottom_t">
                      <a href="#app" className="show-700">
