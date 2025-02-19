@@ -707,11 +707,6 @@ html {
 }
 
 .ai {
-   position: absolute;
-   right: 10%;
-   top: 55%;
-   transform: translateY(-50%);
-
    color: #f5f5f5;
    text-align: center;
    font-family: Satoshi;
@@ -725,6 +720,33 @@ html {
    max-width: 181px;
    border-radius: 106.854px;
    background: linear-gradient(95deg, #5581ef 3.82%, #8078d3 42.41%, #d46878 108.87%);
+}
+
+.first__left_text {
+   color: #050505;
+   font-family: Satoshi;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 1.16;
+   text-transform: capitalize;
+   width: 100%;
+   letter-spacing: 0;
+   max-width: 220px;
+}
+
+.title__wrap_item_2 {
+   display: flex;
+   gap: 20px;
+   align-items: center;
+}
+
+.first__left_text_wrap {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   width: 100%;
+   margin-bottom: -20px;
 }
 
 @media (max-width: 1500px) {
@@ -750,6 +772,12 @@ html {
       gap: 20px;
       align-items: center;
    }
+   .try {
+      margin-top: 50px;
+   }
+   .gallery_section .title-button {
+      padding-top: 20px;
+   }
 }
 
 .show-1100 {
@@ -763,6 +791,10 @@ html {
    .show-1100 {
       display: flex;
    }
+   .title__wrap_item {
+      font-size: 110px !important;
+   }
+
    .footer__left {
       width: 100%;
       align-items: center;
@@ -984,13 +1016,7 @@ html {
    }
 
    .first__left_text {
-      color: #050505;
-      font-family: Satoshi;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      text-transform: capitalize;
+      margin-top: 50px;
       max-width: 300px;
    }
    .chat__input {
@@ -1019,6 +1045,10 @@ html {
    .try img {
       width: 67px;
       height: 67px;
+   }
+   .title__wrap_item {
+      font-size: 85px !important;
+      letter-spacing: -4.277px !important;
    }
    .chat__window .icon.uploaded {
       max-width: 80vw;
@@ -1107,6 +1137,9 @@ html {
    }
    .faq {
       padding-top: 0;
+   }
+   .first__left_text {
+      margin-top: 20px;
    }
 }
 

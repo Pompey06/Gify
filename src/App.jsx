@@ -46,12 +46,21 @@ function App() {
                      <div className="first__left">
                         <div className="title__wrap">
                            <div className="title__wrap_item title__wrap_item_1">Gify AI</div>
-                           <div className="title__wrap_item">Your</div>
+                           <div className="title__wrap_item title__wrap_item_2">
+                              Your
+                              <div className="first__left_text_wrap">
+                                 <p className="first__left_text hide-700">
+                                    for instant viral video creation and effortless NFT minting in one click
+                                 </p>
+                                 <div className="ai">AI-Powered</div>
+                              </div>
+                           </div>
                            <div className="title__wrap_item">AI Agent</div>
                         </div>
                         <p className="first__left_text show-700">
                            for instant viral video creation and effortless NFT minting in one click
                         </p>
+
                         <a href="#app" className="hide-700">
                            <button className="try _scale_hover">
                               Try GIFY AI <img src={try_svg} alt="" />{" "}
@@ -95,12 +104,7 @@ function App() {
                      <AnimationWrap delay={0.5}>
                         <RoadMapItem
                            title="Phase 2"
-                           list={[
-                              "PumpFun token launch",
-                              "Post-launch marketing",
-                              "Listings on CMC/CG",
-                              "AI 3D optimization",
-                           ]}
+                           list={["Launch on Pump Fun", "Platform optimization ", "Marketing Stage 1"]}
                            icon={phase2}
                            type="right"
                         />
