@@ -30,6 +30,7 @@ const ImageSwiper = () => {
       slidesPerView={3}
       slidesPerView1024={2}
       slidesPerView1600={3}
+      autoplay={true}
       
       navigation={false}  // Убираем стрелки
       pagination={{ clickable: true }}

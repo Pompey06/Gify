@@ -64,6 +64,7 @@ const ReviewSwiper = () => {
         slidesPerView={5}
         slidesPerView1024={3}
         slidesPerView1600={3}
+        autoplay={true}
         navigation={true}
         pagination={{ clickable: true }}
       >
