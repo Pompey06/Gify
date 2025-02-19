@@ -668,6 +668,39 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
+.black__button {
+   color: #FFF;
+text-align: center;
+font-family: Satoshi;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.625;
+padding: 6px 20px;
+display: flex;
+align-items: center;
+gap: 12px;
+border-radius: 71.141px;
+border: 1.002px solid #F5F5F5;
+background: #22282B;
+}
+
+.white__button {
+   color: #22282B;
+   text-align: center;
+   font-family: Satoshi;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 1.625;
+   padding: 6px 20px;
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   border-radius: 71.141px;
+   border: 1.002px solid #22282B;
+}
+
 
 
 @media (max-width: 1500px) {

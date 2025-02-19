@@ -6,10 +6,10 @@ import x from '../assets/x.svg';
 import screen from '../assets/screen.svg';
 import tools from '../assets/tools.svg';
 import dot from '../assets/dot.svg';
-import create from '../assets/create.png';
-import connect from '../assets/connect.png';
 import burgerIcon from '../assets/burger.png';
 import cross from '../assets/cross.png';
+import connect_svg from '../assets/connect.svg';
+import create_svg from '../assets/create.svg';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -67,9 +67,9 @@ const Header = () => {
         <a href="#faq" className="menu__link _scale_hover">FAQ</a>
       </nav>
       <div className="header__right header__full-menu">
-        <a href='#app'><img src={create} alt="Create" className="create _scale_hover" /></a>
+        <a href='#app'><button className="create _scale_hover white__button"><img src={create_svg} alt="" /> Create video</button></a>
         <img src={line} alt="" className="line" />
-        <img src={connect} alt="Connect" className="connect _scale_hover" />
+        <button className="connect _scale_hover black__button"><img src={connect_svg} alt="" /> Connect wallet</button>
       </div>
 
       {/* Мобильное меню */}
@@ -101,8 +101,8 @@ const Header = () => {
             </a>
           </div>
           <div className="mobile-menu__right">
-            <img src={create} alt="Create" className="create _scale_hover" />
-            <img src={connect} alt="Connect" className="connect _scale_hover" />
+            <a href='#app'><button className="create _scale_hover">Create video</button></a>
+            <button className="connect _scale_hover">connect wallet</button>
           </div>
         </div>
       )}
