@@ -804,13 +804,13 @@ html {
 /* Плавное исчезновение формы при состоянии "animating" */
 .chat.animating .chat__form {
    opacity: 0;
-   transition: opacity 0.5s ease-out;
+   transition: opacity 0.8s ease-out;
 }
 
 /* В блоке loading (финальная стадия перехода) правая колонка появляется с задержкой */
 .chat--loading.result .loading-column_right {
    opacity: 0;
-   animation: fadeIn 1s forwards 1.2s;
+   animation: fadeIn 0.5s forwards 0.5s;
 }
 
 @keyframes fadeIn {
@@ -848,12 +848,14 @@ html {
 }
 
 .inputs-wrapper {
-   opacity: 1;
-   transition: opacity 0.5s ease-out;
    width: 100%;
 }
+.inputs-wrapper input {
+   opacity: 1;
+   transition: opacity 0.5s ease-out;
+}
 
-.inputs-wrapper.fade-out {
+.inputs-wrapper.fade-out input {
    opacity: 0;
 }
 
