@@ -235,7 +235,7 @@ function App() {
               <AnimationWrap
                 delay={0.5}
                 noAnimate
-                className="animation__right_t"
+                className="animation__left_t"
               >
                 <img src={faq} alt="" className="faq__bg" />
               </AnimationWrap>
@@ -243,7 +243,7 @@ function App() {
             <AnimationWrap
               delay={0.8}
               noAnimate
-              className="faq__right animation__left_t"
+              className="faq__right animation__top_t"
             >
               <Spollers />
             </AnimationWrap>
@@ -292,7 +292,7 @@ function App() {
                   [AI agent]
                 </p>
               </AnimationWrap>
-              <AnimationWrap delay={0.2} noAnimate className="footer__right hide-1100 animation__right_t">
+              <AnimationWrap delay={0.2} noAnimate className="footer__right hide-1100 animation__right">
                 <div className="site__map">
                   <h4 className="site__map_title">Site Map</h4>
                   <a href="#gallery" className="site__map_link _scale_hover">

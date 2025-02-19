@@ -138,7 +138,7 @@ const Header = () => {
         />
       </nav>
       <div className="header__right header__full-menu">
-        <AnimationWrap noAnimate className="animation__top_t" delay={2}>
+        <AnimationWrap noAnimate className="animation__top_t" delay={1.2}>
           <a href="#app">
             <button className="create _scale_hover button white__button">
               <img src={create_svg} alt="" /> Create video
@@ -148,7 +148,7 @@ const Header = () => {
         <AnimationWrap noAnimate className="animation__scale_big" delay={1}>
           <img src={line} alt="" className="line" />
         </AnimationWrap>
-        <AnimationWrap noAnimate className="animation__right_t" delay={2}>
+        <AnimationWrap noAnimate className="animation__right_t" delay={1.2}>
           <button className="connect _scale_hover button black__button">
             <img src={connect_svg} alt="" /> Connect wallet
           </button>
