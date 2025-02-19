@@ -45,9 +45,11 @@ function App() {
             <div>
               <div className="first__left">
                 <div className="title__wrap">
-                  <div className="title__wrap_item title__wrap_item_1">
-                    Gify AI
-                  </div>
+                  <AnimationWrap delay={0.5} noAnimate>
+                    <div className="title__wrap_item title__wrap_item_1">
+                      Gify AI
+                    </div>
+                  </AnimationWrap>
                   <div className="title__wrap_item title__wrap_item_2">
                     Your
                     <div className="first__left_text_wrap">
@@ -103,7 +105,7 @@ function App() {
           <section id="roadmap" className="roadmap__section ">
             <TitleButton title="Roadmap" buttonText="Roadmap" />
             <div className="roadmap">
-              <AnimationWrap delay={0.5}>
+              <AnimationWrap>
                 <RoadMapItem
                   title="Phase 1"
                   list={[
