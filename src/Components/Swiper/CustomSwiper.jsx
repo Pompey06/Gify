@@ -22,7 +22,7 @@ const CustomSwiper = ({
   }
 
   const autoplayConfig = autoplay === true 
-    ? { delay: 3000, disableOnInteraction: false }
+    ? { delay: 2000, disableOnInteraction: false }
     : autoplay === false 
       ? false 
       : autoplay;

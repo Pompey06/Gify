@@ -1,4 +1,5 @@
 import './App.css'
+import { motion } from "framer-motion";
 import 'aos/dist/aos.css';
 import content from './assets/content.png'
 import title from './assets/title.png'
@@ -20,7 +21,7 @@ import TitleButton from './Components/TitleButton/TitleButton';
    import footer__tg from './assets/footer__tg.svg'
    import footer__x from './assets/footer__x.svg'
    import faq from './assets/faq.png'
-   import { useState } from 'react';
+   import { useState, useEffect } from 'react';
 import Spollers from './Components/Spollers'
 import RoadMapItem from './Components/RoadMapItem'
 import Chat from './Components/Chat'
@@ -35,17 +36,35 @@ function App() {
    //  setShowModal(true);
    //  setTimeout(() => setShowModal(false), 2000);
    //};
-   const [chatTitle, setChatTitle] = useState("Try GIFY AI");
-   const [chatTitleClass, setChatTitleClass] = useState("");
+  const [chatTitle, setChatTitle] = useState("Try GIFY AI");
+  const [chatTitleClass, setChatTitleClass] = useState("");
+  
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 100) setShow(true);
+      else setShow(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
 
    return (
       <>
          <div className="wrapper bg__wrap">
          <div className="content _container">
-            <Header />
+           <Header />
             <section className="first">
-               <div className="first__left">
+             <motion.div
+               className="first__left"
+               initial={{ opacity: 0, x: -100 }}
+        animate={show ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+        transition={{ duration: 0.5 }}
+             >
                   <div className="title__wrap">
                      <img src={title} alt="" className="title hide-700" />
                      <img src={title_mb} alt="" className="title_mb show-700" />
@@ -54,7 +73,7 @@ function App() {
                   </div>
                   <p className="first__left_text show-700">for instant viral video creation and effortless NFT minting in one click</p>
                   <a href="#app" className='hide-700' ><button className="try _scale_hover">Try GIFY AI <img src={try_svg} alt="" /> </button></a>
-               </div>
+               </motion.div>
                <img  src={content} alt="" className="main_content" />
                <a href="#app" className='show-700' ><button className="try _scale_hover">Try GIFY AI <img src={try_svg} alt="" /> </button></a>
 
