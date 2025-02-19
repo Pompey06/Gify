@@ -28,7 +28,7 @@ import Chat from './Components/Chat'
 import title_mb from './assets/title_mb.png'
 import Header from './Components/Header'
 import try_svg from './assets/try.svg'
-
+import AnimationWrap from './Components/AnimationWrap'
 function App() {
    //const [showModal, setShowModal] = useState(false);
 
@@ -38,19 +38,6 @@ function App() {
    //};
   const [chatTitle, setChatTitle] = useState("Try GIFY AI");
   const [chatTitleClass, setChatTitleClass] = useState("");
-  
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 100) setShow(true);
-      else setShow(false);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
 
    return (
@@ -58,12 +45,10 @@ function App() {
          <div className="wrapper bg__wrap">
          <div className="content _container">
            <Header />
-            <section className="first">
-             <motion.div
-               className="first__left"
-               initial={{ opacity: 0, x: -100 }}
-        animate={show ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
-        transition={{ duration: 0.5 }}
+           <section className="first">
+             <AnimationWrap>
+             <div
+                className="first__left"
              >
                   <div className="title__wrap">
                      <img src={title} alt="" className="title hide-700" />
@@ -73,7 +58,8 @@ function App() {
                   </div>
                   <p className="first__left_text show-700">for instant viral video creation and effortless NFT minting in one click</p>
                   <a href="#app" className='hide-700' ><button className="try _scale_hover">Try GIFY AI <img src={try_svg} alt="" /> </button></a>
-               </motion.div>
+               </div>
+               </AnimationWrap>
                <img  src={content} alt="" className="main_content" />
                <a href="#app" className='show-700' ><button className="try _scale_hover">Try GIFY AI <img src={try_svg} alt="" /> </button></a>
 
@@ -102,38 +88,48 @@ function App() {
             title="Roadmap"
             buttonText="Roadmap"
             />
-            <div  className="roadmap">
-               <RoadMapItem
-                 title="Phase 1"
-                 list={['White Paper creation', 'Website launch', 'MVP development', 'Social media verification', 'Pre-launch marketing', 'Community building']}
-                 icon={phase1}
-                 type="left"
-               />
-               <RoadMapItem
-                 title="Phase 2"
-                 list={['PumpFun token launch', 'Post-launch marketing', 'Listings on CMC/CG', 'AI 3D optimization']}
-                 icon={phase2}
-                 type="right"
-               />
-               <RoadMapItem
-                 title="Phase 3"
-                 list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
-                 icon={phase3}
-                 type="left"
-               />
-               <RoadMapItem
-                 title="Phase 4"
-                 list={['Expand features', 'Collab with AI agents', 'Boost algorithms', 'Grow team & partners']}
-                 icon={phase4}
-                 type="right"
-               />
-               <RoadMapItem
-                 title="Phase 5"
-                 list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
-                 icon={phase5}
-                 type="left"
-                 isLast={true}
-               />
+             <div className="roadmap">
+              <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 1"
+                  list={['White Paper creation', 'Website launch', 'MVP development', 'Social media verification', 'Pre-launch marketing', 'Community building']}
+                  icon={phase1}
+                  type="left"
+                  />
+               </AnimationWrap>
+               <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 2"
+                  list={['PumpFun token launch', 'Post-launch marketing', 'Listings on CMC/CG', 'AI 3D optimization']}
+                  icon={phase2}
+                  type="right"
+                  />
+               </AnimationWrap>
+               <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 3"
+                  list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
+                  icon={phase3}
+                  type="left"
+                  />
+               </AnimationWrap>
+               <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 4"
+                  list={['Expand features', 'Collab with AI agents', 'Boost algorithms', 'Grow team & partners']}
+                  icon={phase4}
+                  type="right"
+                  />
+               </AnimationWrap>
+               <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 5"
+                  list={['Second Wave of Major Marketing', 'Partnerships with AI Devs', 'Go Global with the Platform', 'AI Agent in Real Businesses']}
+                  icon={phase5}
+                  type="left"
+                  isLast={true}
+                  />
+                </AnimationWrap>
             </div>
             </section>
             <div id="feedback" className="feedback__title">
