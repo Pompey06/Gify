@@ -27,239 +27,265 @@ import Header from "./Components/Header";
 import try_svg from "./assets/try.svg";
 import AnimationWrap from "./Components/AnimationWrap";
 function App() {
-   //const [showModal, setShowModal] = useState(false);
+  //const [showModal, setShowModal] = useState(false);
 
-   //const handleCopySuccess = () => {
-   //  setShowModal(true);
-   //  setTimeout(() => setShowModal(false), 2000);
-   //};
-   const [chatTitle, setChatTitle] = useState("Try GIFY AI");
-   const [chatTitleClass, setChatTitleClass] = useState("");
+  //const handleCopySuccess = () => {
+  //  setShowModal(true);
+  //  setTimeout(() => setShowModal(false), 2000);
+  //};
+  const [chatTitle, setChatTitle] = useState("Try GIFY AI");
+  const [chatTitleClass, setChatTitleClass] = useState("");
 
-   return (
-      <>
-         <div className="wrapper bg__wrap">
-            <div className="content _container">
-               <Header />
-               <section className="first">
-                  <AnimationWrap>
-                     <div className="first__left">
-                        <div className="title__wrap">
-                           <div className="title__wrap_item title__wrap_item_1">Gify AI</div>
-                           <div className="title__wrap_item title__wrap_item_2">
-                              Your
-                              <div className="first__left_text_wrap">
-                                 <p className="first__left_text hide-700">
-                                    for instant viral video creation and effortless NFT minting in one click
-                                 </p>
-                                 <div className="ai">AI-Powered</div>
-                              </div>
-                           </div>
-                           <div className="title__wrap_item">AI Agent</div>
-                        </div>
-                        <p className="first__left_text show-700">
-                           for instant viral video creation and effortless NFT minting in one click
-                        </p>
+  return (
+    <>
+      <div className="wrapper bg__wrap">
+        <div className="content _container">
+          <Header />
+          <section className="first">
+            <div>
+              <div className="first__left">
+                <div className="title__wrap">
+                  <div className="title__wrap_item title__wrap_item_1">
+                    Gify AI
+                  </div>
+                  <div className="title__wrap_item title__wrap_item_2">
+                    Your
+                    <div className="first__left_text_wrap">
+                      <p className="first__left_text hide-700">
+                        for instant viral video creation and effortless NFT
+                        minting in one click
+                      </p>
+                      <div className="ai">AI-Powered</div>
+                    </div>
+                  </div>
+                  <div className="title__wrap_item">AI Agent</div>
+                </div>
+                <p className="first__left_text show-700">
+                  for instant viral video creation and effortless NFT minting in
+                  one click
+                </p>
 
-                        <a href="#app" className="hide-700">
-                           <button className="try _scale_hover">
-                              Try GIFY AI <img src={try_svg} alt="" />{" "}
-                           </button>
-                        </a>
-                     </div>
-                  </AnimationWrap>
-                  <img src={content} alt="" className="main_content" />
-                  <a href="#app" className="show-700">
-                     <button className="try _scale_hover">
-                        Try GIFY AI <img src={try_svg} alt="" />{" "}
-                     </button>
+                <a href="#app" className="hide-700">
+                  <button className="try _scale_hover">
+                    Try GIFY AI <img src={try_svg} alt="" />{" "}
+                  </button>
+                </a>
+              </div>
+            </div>
+            <img src={content} alt="" className="main_content" />
+            <a href="#app" className="show-700">
+              <button className="try _scale_hover">
+                Try GIFY AI <img src={try_svg} alt="" />{" "}
+              </button>
+            </a>
+          </section>
+          <div id="gallery" className="gallery_section">
+            <TitleButton
+              title="Gallery"
+              title2="GIFY AI"
+              buttonText="Gallery"
+            />
+          </div>
+          <section className="gallery">
+            <ImageSwiper />
+          </section>
+          <section className="test">
+            <TitleButton
+              title={chatTitle}
+              buttonText="GIFY AI"
+              titleClass={chatTitleClass}
+            />
+            <Chat
+              setChatTitle={setChatTitle}
+              setChatTitleClass={setChatTitleClass}
+            />
+          </section>
+          <section id="roadmap" className="roadmap__section ">
+            <TitleButton title="Roadmap" buttonText="Roadmap" />
+            <div className="roadmap">
+              <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 1"
+                  list={[
+                    "Creating an MVP ",
+                    "Whitepaper",
+                    "Pre-Launch Marketing",
+                    "Launching official channels",
+                  ]}
+                  icon={phase1}
+                  type="left"
+                />
+              </AnimationWrap>
+              <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 2"
+                  list={[
+                    "Launch on Pump Fun",
+                    "Platform optimization ",
+                    "Marketing Stage 1",
+                  ]}
+                  icon={phase2}
+                  type="right"
+                />
+              </AnimationWrap>
+              <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 3"
+                  list={[
+                    "Second Wave of Major Marketing",
+                    "Partnerships with AI Devs",
+                    "Go Global with the Platform",
+                    "AI Agent in Real Businesses",
+                  ]}
+                  icon={phase3}
+                  type="left"
+                />
+              </AnimationWrap>
+              <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 4"
+                  list={[
+                    "Expand features",
+                    "Collab with AI agents",
+                    "Boost algorithms",
+                    "Grow team & partners",
+                  ]}
+                  icon={phase4}
+                  type="right"
+                />
+              </AnimationWrap>
+              <AnimationWrap delay={0.5}>
+                <RoadMapItem
+                  title="Phase 5"
+                  list={[
+                    "Second Wave of Major Marketing",
+                    "Partnerships with AI Devs",
+                    "Go Global with the Platform",
+                    "AI Agent in Real Businesses",
+                  ]}
+                  icon={phase5}
+                  type="left"
+                  isLast={true}
+                />
+              </AnimationWrap>
+            </div>
+          </section>
+          <div id="feedback" className="feedback__title">
+            <TitleButton
+              title="Feedback"
+              title2="on GIFY AI"
+              buttonText="Feedback"
+            />
+          </div>
+        </div>
+
+        <section className="feedback">
+          <ReviewSwiper />
+        </section>
+
+        <div className="_container">
+          <section id="faq" className="faq">
+            <div className="faq__left">
+              <TitleButton
+                title="Frequently Asked Questions"
+                buttonText="FAQ"
+              />
+              <img src={faq} alt="" className="faq__bg" />
+            </div>
+            <div className="faq__right">
+              <Spollers />
+            </div>
+          </section>
+          <footer className="footer">
+            <div className="footer__top">
+              <div className="footer__left">
+                <img src={footer__logo} alt="" className="footer__logo" />
+                <div className="footer__right show-1100">
+                  <div className="site__map">
+                    <h4 className="site__map_title">Site Map</h4>
+                    <a href="#" className="site__map_link _scale_hover">
+                      Gallery
+                    </a>
+                    <a href="#" className="site__map_link _scale_hover">
+                      App
+                    </a>
+                    <a href="#" className="site__map_link _scale_hover">
+                      Roadmap
+                    </a>
+                    <a href="#" className="site__map_link _scale_hover">
+                      Feedback
+                    </a>
+                    <a href="#" className="site__map_link _scale_hover">
+                      FAQ
+                    </a>
+                  </div>
+                  <div className="site__map resources">
+                    <h4 className="site__map_title">Resources</h4>
+                    <a href="#" className="site__map_link _scale_hover">
+                      <img src={documents} alt="" />
+                      Documents
+                    </a>
+                    <a href="#" className="site__map_link _scale_hover">
+                      <img src={footer__tg} alt="" />
+                      Telegram
+                    </a>
+                    <a href="#" className="site__map_link _scale_hover">
+                      <img src={footer__x} alt="" />x
+                    </a>
+                  </div>
+                </div>
+                <p className="footer__text hide-700">[your AI agent]</p>
+                <p className="footer__text show-700">
+                  [your] <br />
+                  [AI agent]
+                </p>
+              </div>
+              <div className="footer__right hide-1100">
+                <div className="site__map">
+                  <h4 className="site__map_title">Site Map</h4>
+                  <a href="#gallery" className="site__map_link _scale_hover">
+                    Gallery
                   </a>
-               </section>
-               <div id="gallery" className="gallery_section">
-                  <TitleButton title="Gallery" title2="GIFY AI" buttonText="Gallery" />
-               </div>
-               <section className="gallery">
-                  <ImageSwiper />
-               </section>
-               <section className="test">
-                  <TitleButton title={chatTitle} buttonText="GIFY AI" titleClass={chatTitleClass} />
-                  <Chat setChatTitle={setChatTitle} setChatTitleClass={setChatTitleClass} />
-               </section>
-               <section id="roadmap" className="roadmap__section ">
-                  <TitleButton title="Roadmap" buttonText="Roadmap" />
-                  <div className="roadmap">
-                     <AnimationWrap delay={0.5}>
-                        <RoadMapItem
-                           title="Phase 1"
-                           list={[
-                              "Creating an MVP ",
-                              "Whitepaper",
-                              "Pre-Launch Marketing",
-                              "Launching official channels",
-                           ]}
-                           icon={phase1}
-                           type="left"
-                        />
-                     </AnimationWrap>
-                     <AnimationWrap delay={0.5}>
-                        <RoadMapItem
-                           title="Phase 2"
-                           list={["Launch on Pump Fun", "Platform optimization ", "Marketing Stage 1"]}
-                           icon={phase2}
-                           type="right"
-                        />
-                     </AnimationWrap>
-                     <AnimationWrap delay={0.5}>
-                        <RoadMapItem
-                           title="Phase 3"
-                           list={[
-                              "Second Wave of Major Marketing",
-                              "Partnerships with AI Devs",
-                              "Go Global with the Platform",
-                              "AI Agent in Real Businesses",
-                           ]}
-                           icon={phase3}
-                           type="left"
-                        />
-                     </AnimationWrap>
-                     <AnimationWrap delay={0.5}>
-                        <RoadMapItem
-                           title="Phase 4"
-                           list={[
-                              "Expand features",
-                              "Collab with AI agents",
-                              "Boost algorithms",
-                              "Grow team & partners",
-                           ]}
-                           icon={phase4}
-                           type="right"
-                        />
-                     </AnimationWrap>
-                     <AnimationWrap delay={0.5}>
-                        <RoadMapItem
-                           title="Phase 5"
-                           list={[
-                              "Second Wave of Major Marketing",
-                              "Partnerships with AI Devs",
-                              "Go Global with the Platform",
-                              "AI Agent in Real Businesses",
-                           ]}
-                           icon={phase5}
-                           type="left"
-                           isLast={true}
-                        />
-                     </AnimationWrap>
-                  </div>
-               </section>
-               <div id="feedback" className="feedback__title">
-                  <TitleButton title="Feedback" title2="on GIFY AI" buttonText="Feedback" />
-               </div>
+                  <a href="#app" className="site__map_link _scale_hover">
+                    App
+                  </a>
+                  <a href="#roadmap" className="site__map_link _scale_hover">
+                    Roadmap
+                  </a>
+                  <a href="#feedback" className="site__map_link _scale_hover">
+                    Feedback
+                  </a>
+                  <a href="#faq" className="site__map_link _scale_hover">
+                    FAQ
+                  </a>
+                </div>
+                <div className="site__map resources">
+                  <h4 className="site__map_title">Resources</h4>
+                  <a href="#" className="site__map_link _scale_hover">
+                    <img src={documents} alt="" />
+                    Documents
+                  </a>
+                  <a href="#" className="site__map_link _scale_hover">
+                    <img src={footer__tg} alt="" />
+                    Telegram
+                  </a>
+                  <a href="#" className="site__map_link _scale_hover">
+                    <img src={footer__x} alt="" />x
+                  </a>
+                </div>
+              </div>
             </div>
-
-            <section className="feedback">
-               <ReviewSwiper />
-            </section>
-
-            <div className="_container">
-               <section id="faq" className="faq">
-                  <div className="faq__left">
-                     <TitleButton title="Frequently Asked Questions" buttonText="FAQ" />
-                     <img src={faq} alt="" className="faq__bg" />
-                  </div>
-                  <div className="faq__right">
-                     <Spollers />
-                  </div>
-               </section>
-               <footer className="footer">
-                  <div className="footer__top">
-                     <div className="footer__left">
-                        <img src={footer__logo} alt="" className="footer__logo" />
-                        <div className="footer__right show-1100">
-                           <div className="site__map">
-                              <h4 className="site__map_title">Site Map</h4>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 Gallery
-                              </a>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 App
-                              </a>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 Roadmap
-                              </a>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 Feedback
-                              </a>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 FAQ
-                              </a>
-                           </div>
-                           <div className="site__map resources">
-                              <h4 className="site__map_title">Resources</h4>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 <img src={documents} alt="" />
-                                 Documents
-                              </a>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 <img src={footer__tg} alt="" />
-                                 Telegram
-                              </a>
-                              <a href="#" className="site__map_link _scale_hover">
-                                 <img src={footer__x} alt="" />x
-                              </a>
-                           </div>
-                        </div>
-                        <p className="footer__text hide-700">[your AI agent]</p>
-                        <p className="footer__text show-700">
-                           [your] <br />
-                           [AI agent]
-                        </p>
-                     </div>
-                     <div className="footer__right hide-1100">
-                        <div className="site__map">
-                           <h4 className="site__map_title">Site Map</h4>
-                           <a href="#gallery" className="site__map_link _scale_hover">
-                              Gallery
-                           </a>
-                           <a href="#app" className="site__map_link _scale_hover">
-                              App
-                           </a>
-                           <a href="#roadmap" className="site__map_link _scale_hover">
-                              Roadmap
-                           </a>
-                           <a href="#feedback" className="site__map_link _scale_hover">
-                              Feedback
-                           </a>
-                           <a href="#faq" className="site__map_link _scale_hover">
-                              FAQ
-                           </a>
-                        </div>
-                        <div className="site__map resources">
-                           <h4 className="site__map_title">Resources</h4>
-                           <a href="#" className="site__map_link _scale_hover">
-                              <img src={documents} alt="" />
-                              Documents
-                           </a>
-                           <a href="#" className="site__map_link _scale_hover">
-                              <img src={footer__tg} alt="" />
-                              Telegram
-                           </a>
-                           <a href="#" className="site__map_link _scale_hover">
-                              <img src={footer__x} alt="" />x
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-                  <div className="footer__bottom">
-                     <p className="copyright">© GIFY AI, All Rights Reserved</p>
-                  </div>
-               </footer>
+            <div className="footer__bottom">
+              <p className="copyright">© GIFY AI, All Rights Reserved</p>
             </div>
-         </div>
-         {/*<div className={`copied_modal ${showModal ? '_show' : ''}`}>
+          </footer>
+        </div>
+      </div>
+      {/*<div className={`copied_modal ${showModal ? '_show' : ''}`}>
         copied to clipboard
       </div>*/}
-      </>
-   );
+    </>
+  );
 }
 
 export default App;
