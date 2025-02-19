@@ -18,7 +18,7 @@ import footer__logo from "./assets/footer__logo.svg";
 import documents from "./assets/book.svg";
 import footer__tg from "./assets/footer__tg.svg";
 import footer__x from "./assets/footer__x.svg";
-import faq from "./assets/faq.png";
+import faq from "./assets/faq.svg";
 import { useState } from "react";
 import Spollers from "./Components/Spollers";
 import RoadMapItem from "./Components/RoadMapItem";
@@ -264,7 +264,8 @@ function App() {
                               Telegram
                            </a>
                            <a href="#" className="site__map_link _scale_hover">
-                              <img src={footer__x} alt="" />x
+                              <img src={footer__x} alt="" />
+                              Twitter
                            </a>
                         </div>
                      </AnimationWrap>
