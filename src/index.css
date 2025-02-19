@@ -718,9 +718,10 @@ background: linear-gradient(91deg, #2A61E8 0.42%, #5B4DE8 35.5%, #FF4D68 95.91%)
 
 .ai {
    position: absolute;
-   right: 0;
-   top: 0;
-   
+   right: 10%;
+   top: 55%;
+   transform: translateY(-50%);
+
    color: #F5F5F5;
 text-align: center;
 font-family: Satoshi;
@@ -792,6 +793,13 @@ background: linear-gradient(95deg, #5581EF 3.82%, #8078D3 42.41%, #D46878 108.87
    }
 }
 
+@media (max-width: 1000px) {
+   .ai {
+      font-size: 20px;
+      padding: 7px 22px;
+   }
+}
+
 .show-700 {
    display: none;
 }
@@ -852,6 +860,10 @@ background-clip: text;
    .loader {
       width: 156px;
       height: 156px;
+   }
+   .ai {
+      top: 40%;
+      right: -5%;
    }
    .chat__window .icon.uploaded {
       max-width: 400px;
@@ -1123,6 +1135,9 @@ max-width: 300px;
    }
    .header__left {
       gap: 10px;
+   }
+   .ai {
+      right: -1%;
    }
 }
 
