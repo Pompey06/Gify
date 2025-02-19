@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import chat from "../assets/chat__bg.svg";
 import icon from "../assets/icon.svg";
 import line from "../assets/line.svg";
@@ -12,33 +11,39 @@ import upload from "../assets/upload.svg";
 import animate from "../assets/animate.svg";
 
 const Chat = ({ setChatTitle, setChatTitleClass }) => {
-   // Состояние может принимать значения "idle", "loading" и "result"
+   // Возможные состояния: "idle", "animating", "loading", "result"
    const [uploadedImage, setUploadedImage] = useState(null);
    const [loadingPhase, setLoadingPhase] = useState("idle");
    const [minted, setMinted] = useState(false);
+   const [inputsVisible, setInputsVisible] = useState(true);
 
    const handleFileChange = (e) => {
       const file = e.target.files[0];
-      const allowedTypes = ["image/png", "image/jpg", "image/jpeg", "image/tiff", "image/webp"];
-      if (file && allowedTypes.includes(file.type)) {
+      if (file && file.type.startsWith("image/")) {
          const imageURL = URL.createObjectURL(file);
          setUploadedImage(imageURL);
-      } else {
-         // Файл неподходящего формата — можно уведомить пользователя
-         alert("Unsupported file type. Please upload a PNG, JPG, JPEG, TIFF, or WEBP image.");
       }
    };
 
    const handleAnimateClick = () => {
-      setLoadingPhase("loading");
-      // Через 5 секунд переключаемся на состояние "result"
+      setLoadingPhase("animating");
+      // После 1 секунды анимации переходим в состояние "loading"
       setTimeout(() => {
-         setLoadingPhase("result");
-      }, 5000);
+         setLoadingPhase("loading");
+      }, 1000);
    };
 
+   // Когда мы в состоянии "loading", ждем 5 секунд и переходим в "result"
+   useEffect(() => {
+      if (loadingPhase === "loading") {
+         const timer = setTimeout(() => {
+            setLoadingPhase("result");
+         }, 5000);
+         return () => clearTimeout(timer);
+      }
+   }, [loadingPhase]);
+
    const handleDownload = () => {
-      // Создаем временную ссылку для скачивания изображения (используем icon)
       const link = document.createElement("a");
       link.href = icon;
       link.download = "icon.png";
@@ -47,12 +52,44 @@ const Chat = ({ setChatTitle, setChatTitleClass }) => {
       document.body.removeChild(link);
    };
 
+   if (loadingPhase === "animating") {
+      return (
+         <div id="app" className="chat animating">
+            <img src={chat} alt="Chat background" className="chat__bg" />
+            <div className="chat__window">
+               <img src={uploadedImage || icon} alt="Chat Icon" className={`icon ${uploadedImage ? "uploaded" : ""}`} />
+            </div>
+            <div className="chat__form animating-form">
+               {/* Форма плавно исчезает */}
+               <input
+                  accept="image/png, image/jpg, image/jpeg, image/tiff, image/webp"
+                  id="file"
+                  type="file"
+                  className="none"
+                  onChange={handleFileChange}
+               />
+               <label htmlFor="file" className="upload white__button button _scale_hover">
+                  <img src={upload} alt="" /> Upload
+               </label>
+               <img src={line} alt="Line" className="line" />
+               <input className="chat__input" type="text" placeholder="Write your prompt" />
+               <button
+                  className={`animate _scale_hover button black__button ${!uploadedImage ? "disabled" : ""}`}
+                  onClick={uploadedImage ? handleAnimateClick : null}
+               >
+                  <img src={animate} alt="Animate" /> Animate
+               </button>
+            </div>
+         </div>
+      );
+   }
+
    if (loadingPhase === "loading") {
       return (
          <div className="chat chat--loading">
             <div className="chat__loading">
                <div className="chat__loading-column loading-column_left">
-                  <img src={loaderImage} alt="Loader" className="loader" />
+                  <img src={loaderImage} alt="Icon" className="loader" />
                </div>
                <div className="chat__loading-column loading-column_right">
                   <h2 className="loading-column_title">
@@ -80,28 +117,33 @@ const Chat = ({ setChatTitle, setChatTitleClass }) => {
                         <h2 className="loading-column_title mb-10">NFT Title</h2>
                         <h2 className="loading-column_title mb-10">Description</h2>
                         <div className="loading-column_buttons">
-                           <button className="check-button _scale_hover button color__button">
-                              <img src={check} alt="Check" /> Check
-                           </button>
+                           <a href="#" className="check-button _scale_hover button color__button">
+                              <img src={check} alt="Check" /> Check your NFT
+                           </a>
                         </div>
                      </>
                   ) : (
                      <>
-                        <h2 className="loading-column_title ">NFT Title</h2>
-                        <input type="text" className="loading-column_input" placeholder="NFT Title" />
-                        <h2 className="loading-column_title ">Description</h2>
-                        <input type="text" className="loading-column_input" placeholder="Description" />
+                        <h2 className="loading-column_title">NFT Title</h2>
+                        <div className={`inputs-wrapper ${inputsVisible ? "" : "fade-out"}`}>
+                           <input type="text" className="loading-column_input" placeholder="NFT Title" />
+                           <h2 className="loading-column_title">Description</h2>
+                           <input type="text" className="loading-column_input" placeholder="Description" />
+                        </div>
                         <div className="loading-column_buttons">
                            <button
                               className="mint _scale_hover button color__button"
                               onClick={() => {
-                                 setMinted(true);
-                                 setChatTitle(
-                                    <>
-                                       NFT <span>Minted</span>
-                                    </>
-                                 );
-                                 setChatTitleClass("chat__title_minted");
+                                 setInputsVisible(false);
+                                 setTimeout(() => {
+                                    setMinted(true);
+                                    setChatTitle(
+                                       <>
+                                          NFT <span>Minted</span>
+                                       </>
+                                    );
+                                    setChatTitleClass("chat__title_minted");
+                                 }, 500);
                               }}
                            >
                               <img src={mint} alt="Mint" /> Mint
@@ -117,6 +159,7 @@ const Chat = ({ setChatTitle, setChatTitleClass }) => {
                                  setUploadedImage(null);
                                  setChatTitle("Try GIFY AI");
                                  setChatTitleClass("");
+                                 setInputsVisible(true);
                               }}
                            >
                               <img src={again} alt="Again" /> Again
@@ -151,10 +194,10 @@ const Chat = ({ setChatTitle, setChatTitleClass }) => {
             <img src={line} alt="Line" className="line" />
             <input className="chat__input" type="text" placeholder="Write your prompt" />
             <button
-               className={`animate animate black__button button  ${!uploadedImage ? "disabled" : "_scale_hover"}`}
+               className={`animate _scale_hover button black__button ${!uploadedImage ? "disabled" : ""}`}
                onClick={uploadedImage ? handleAnimateClick : null}
             >
-               <img src={animate} alt="" /> Animate
+               <img src={animate} alt="Animate" /> Animate
             </button>
          </div>
       </div>
