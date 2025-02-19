@@ -45,41 +45,81 @@ function App() {
             <div>
               <div className="first__left">
                 <div className="title__wrap">
-                  <AnimationWrap delay={0.5} noAnimate>
+                  <AnimationWrap noAnimate className="animation__top_t">
                     <div className="title__wrap_item title__wrap_item_1">
                       Gify AI
                     </div>
                   </AnimationWrap>
                   <div className="title__wrap_item title__wrap_item_2">
-                    Your
+                    <AnimationWrap
+                      delay={0.1}
+                      noAnimate
+                      className="title__wrap_item animation__left_t"
+                    >
+                      Your
+                    </AnimationWrap>
                     <div className="first__left_text_wrap">
-                      <p className="first__left_text hide-700">
-                        for instant viral video creation and effortless NFT
-                        minting in one click
-                      </p>
-                      <div className="ai">AI-Powered</div>
+                      <AnimationWrap
+                        delay={0.3}
+                        noAnimate
+                        className="animation__scale"
+                      >
+                        <p className="first__left_text hide-700">
+                          for instant viral video creation and effortless NFT
+                          minting in one click
+                        </p>
+                      </AnimationWrap>
+                      <AnimationWrap
+                        delay={0.3}
+                        noAnimate
+                        className="animation__right_t"
+                      >
+                        <div className="ai">AI-Powered</div>
+                      </AnimationWrap>
                     </div>
                   </div>
-                  <div className="title__wrap_item">AI Agent</div>
+                  <AnimationWrap
+                    delay={0.6}
+                    noAnimate
+                    className="animation__bottom_t"
+                  >
+                    <div className="title__wrap_item">AI Agent</div>
+                  </AnimationWrap>
                 </div>
-                <p className="first__left_text show-700">
-                  for instant viral video creation and effortless NFT minting in
-                  one click
-                </p>
+                <AnimationWrap
+                  delay={0.8}
+                  noAnimate
+                  className="animation__top_t"
+                >
+                  <p className="first__left_text show-700">
+                    for instant viral video creation and effortless NFT minting
+                    in one click
+                  </p>
+                </AnimationWrap>
 
-                <a href="#app" className="hide-700">
-                  <button className="try _scale_hover">
-                    Try GIFY AI <img src={try_svg} alt="" />{" "}
-                  </button>
-                </a>
+                <AnimationWrap
+                  delay={1}
+                  noAnimate
+                  className="animation__bottom_t"
+                >
+                  <a href="#app" className="hide-700">
+                    <button className="try _scale_hover">
+                      Try GIFY AI <img src={try_svg} alt="" />{" "}
+                    </button>
+                  </a>
+                </AnimationWrap>
               </div>
             </div>
-            <img src={content} alt="" className="main_content" />
-            <a href="#app" className="show-700">
-              <button className="try _scale_hover">
-                Try GIFY AI <img src={try_svg} alt="" />{" "}
-              </button>
-            </a>
+            <AnimationWrap delay={0.5} noAnimate className="animation__right_t">
+              <img src={content} alt="" className="main_content" />
+            </AnimationWrap>
+            <AnimationWrap delay={1} noAnimate className="animation__bottom_t">
+              <a href="#app" className="show-700">
+                <button className="try _scale_hover">
+                  Try GIFY AI <img src={try_svg} alt="" />{" "}
+                </button>
+              </a>
+            </AnimationWrap>
           </section>
           <div id="gallery" className="gallery_section">
             <TitleButton
@@ -192,15 +232,25 @@ function App() {
                 title="Frequently Asked Questions"
                 buttonText="FAQ"
               />
-              <img src={faq} alt="" className="faq__bg" />
+              <AnimationWrap
+                delay={0.5}
+                noAnimate
+                className="animation__right_t"
+              >
+                <img src={faq} alt="" className="faq__bg" />
+              </AnimationWrap>
             </div>
-            <div className="faq__right">
+            <AnimationWrap
+              delay={0.8}
+              noAnimate
+              className="faq__right animation__left_t"
+            >
               <Spollers />
-            </div>
+            </AnimationWrap>
           </section>
           <footer className="footer">
             <div className="footer__top">
-              <div className="footer__left">
+              <AnimationWrap delay={0.2} noAnimate className="footer__left animation__left_t">
                 <img src={footer__logo} alt="" className="footer__logo" />
                 <div className="footer__right show-1100">
                   <div className="site__map">
@@ -241,8 +291,8 @@ function App() {
                   [your] <br />
                   [AI agent]
                 </p>
-              </div>
-              <div className="footer__right hide-1100">
+              </AnimationWrap>
+              <AnimationWrap delay={0.2} noAnimate className="footer__right hide-1100 animation__right_t">
                 <div className="site__map">
                   <h4 className="site__map_title">Site Map</h4>
                   <a href="#gallery" className="site__map_link _scale_hover">
@@ -275,11 +325,11 @@ function App() {
                     <img src={footer__x} alt="" />x
                   </a>
                 </div>
-              </div>
+              </AnimationWrap>
             </div>
-            <div className="footer__bottom">
+            <AnimationWrap delay={0.5} noAnimate className="footer__bottom animation__top_t">
               <p className="copyright">© GIFY AI, All Rights Reserved</p>
-            </div>
+            </AnimationWrap>
           </footer>
         </div>
       </div>
