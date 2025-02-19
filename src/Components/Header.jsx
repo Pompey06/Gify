@@ -22,13 +22,28 @@ const NetworkItem = ({ href, src, delay, className }) => {
   );
 };
 
-const MenuItem = ({ href, text, delay, className }) => {
+const MenuItem = ({ href, text, delay, className, isShowDot = true }) => {
   return (
-    <AnimationWrap noAnimate delay={delay} className={"menu__link " + className}>
-      <a href={href} className="_scale_hover">
-        {text}
-      </a>
-    </AnimationWrap>
+    <>
+      <AnimationWrap
+        noAnimate
+        delay={delay}
+        className={"menu__link " + className}
+      >
+        <a href={href} className="_scale_hover">
+          {text}
+        </a>
+      </AnimationWrap>
+      {isShowDot && (
+        <AnimationWrap
+          noAnimate
+          delay={delay + 0.3}
+          className="animation__scale_big dot-wrap"
+        >
+          <img src={dot} alt="Dot" className="dot" />
+        </AnimationWrap>
+      )}
+    </>
   );
 };
 const Header = () => {
@@ -90,12 +105,37 @@ const Header = () => {
         </div>
       </div>
       <nav className="menu header__full-menu">
-        <MenuItem href="#gallery" text="Gallery" delay={0.5}/>
-        <img src={dot} alt="Dot" className="dot" />
-        <MenuItem href="#app" text="App" delay={0.7} />
-        <MenuItem href="#roadmap" text="Roadmap" delay={0.9} />
-        <MenuItem href="#feedback" text="Feedback" delay={1.1} />
-        <MenuItem href="#faq" text="FAQ" delay={1.3} />
+        <MenuItem
+          href="#gallery"
+          text="Gallery"
+          delay={0.5}
+          className="animation__bottom_t"
+        />
+        <MenuItem
+          href="#app"
+          text="App"
+          delay={0.7}
+          className="animation__top_t"
+        />
+        <MenuItem
+          href="#roadmap"
+          text="Roadmap"
+          delay={0.9}
+          className="animation__bottom_t"
+        />
+        <MenuItem
+          href="#feedback"
+          text="Feedback"
+          delay={1.1}
+          className="animation__top_t"
+        />
+        <MenuItem
+          href="#faq"
+          text="FAQ"
+          delay={1.3}
+          isShowDot={false}
+          className="animation__bottom_t"
+        />
       </nav>
       <div className="header__right header__full-menu">
         <AnimationWrap noAnimate className="animation__top_t" delay={2}>

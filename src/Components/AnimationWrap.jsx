@@ -32,7 +32,10 @@ const AnimationWrap = ({
   return (
     <motion.div
       initial={defState}
-      whileInView={() => setIsInView(true)}
+      whileInView={() => {
+        setIsInView(true);
+        return inViewState;
+      }}
       transition={{ duration, delay }}
       viewport={{ once: true, amount: 0.5 }}
       className={`${className} ${isInView ? "_animate" : ""}`}

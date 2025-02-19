@@ -215,3 +215,9 @@
   transform: scale(1);
   opacity: 1;
 }
+
+.dot-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
