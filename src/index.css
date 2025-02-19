@@ -401,7 +401,6 @@ html {
    font-weight: 700;
    line-height: 72px; /* 112.5% */
    letter-spacing: -2.56px;
-   text-align: left;
 }
 
 .loading-column_text {
@@ -787,76 +786,6 @@ html {
    gap: 24px;
    width: 100%;
    margin-bottom: -20px;
-}
-
-/* Задаём базовые размеры и переходы для контейнера чата */
-.chat {
-   transition: width 1s ease-out;
-   transform-origin: left;
-}
-
-/* В состоянии "animating" уменьшаем ширину до 700px */
-.chat.animating {
-   width: 0px;
-   padding: 0;
-}
-
-/* Плавное исчезновение формы при состоянии "animating" */
-.chat.animating .chat__form {
-   opacity: 0;
-   transition: opacity 0.8s ease-out;
-}
-
-/* В блоке loading (финальная стадия перехода) правая колонка появляется с задержкой */
-.chat--loading.result .loading-column_right {
-   opacity: 0;
-   animation: fadeIn 0.5s forwards 0.5s;
-}
-
-@keyframes fadeIn {
-   from {
-      opacity: 0.5;
-   }
-   to {
-      opacity: 1;
-   }
-}
-
-.loading-column_right {
-   opacity: 0;
-   animation: fadeIn2 0.5s forwards 0.5s;
-}
-
-@keyframes fadeIn2 {
-   from {
-      opacity: 0;
-   }
-   to {
-      opacity: 1;
-   }
-}
-
-.loading-column_left {
-   transform: scaleX(0);
-   transform-origin: left;
-   transition: transform 0.5s ease-out;
-}
-
-/* Когда контейнер переходит в состояние loading (финальная стадия), левая колонка расширяется */
-.chat--loading .loading-column_left {
-   transform: scaleX(1);
-}
-
-.inputs-wrapper {
-   width: 100%;
-}
-.inputs-wrapper input {
-   opacity: 1;
-   transition: opacity 0.5s ease-out;
-}
-
-.inputs-wrapper.fade-out input {
-   opacity: 0;
 }
 
 @media (max-width: 1500px) {
