@@ -2,14 +2,14 @@
 import { useState } from 'react';
 import chat from '../assets/chat__bg.svg';
 import icon from '../assets/icon.svg';
-import upload from '../assets/upload.png';
 import line from '../assets/line.svg';
-import animate from '../assets/animate.png';
 import loaderImage from '../assets/loader.png';
-import again from '../assets/again.png';
-import download from '../assets/download.png';
-import mint from '../assets/mint.png';
-import check from '../assets/check.png';
+import again from '../assets/again.svg';
+import download from '../assets/download.svg';
+import mint from '../assets/mint.svg';
+import check from '../assets/check.svg';
+import upload from '../assets/upload.svg';
+import animate from '../assets/animate.svg';
 
 const Chat = ({setChatTitle, setChatTitleClass}) => {
   // Состояние может принимать значения "idle", "loading" и "result"
@@ -76,9 +76,11 @@ const Chat = ({setChatTitle, setChatTitleClass}) => {
                 <h2 className="loading-column_title mb-10">NFT Title</h2>
                 <h2 className="loading-column_title mb-10">Description</h2>
                 <div className="loading-column_buttons">
-                  <a href="#" className="check-button">
-                    <img src={check} alt="Check" className="check _scale_hover" />
-                  </a>
+                  <button
+                    className="check-button _scale_hover button color__button"
+                  >
+                    <img src={check} alt="Check" /> Check
+                  </button>
                 </div>
               </>
             ) : (
@@ -88,25 +90,23 @@ const Chat = ({setChatTitle, setChatTitleClass}) => {
                 <h2 className="loading-column_title ">Description</h2>
                 <input type="text" className="loading-column_input" placeholder="Description" />
                 <div className="loading-column_buttons">
-                  <img
-                    src={mint}
-                    alt="Mint"
+                  <button
+                    className="mint _scale_hover button color__button"
                     
-                    className="mint _scale_hover"
                     onClick={() => {setMinted(true); setChatTitle(<>NFT <span>Minted</span></>);
                      setChatTitleClass("chat__title_minted");
                     }}
-                  />
-                  <img
-                    src={download}
-                    alt="Download"
-                    className="download _scale_hover"
+                  >
+                    <img src={mint} alt="Mint" /> Mint
+                  </button>
+                  <button
+                    className="download _scale_hover button black__button"
                     onClick={handleDownload}
-                  />
-                  <img
-                    src={again}
-                    alt="Again"
-                    className="again _scale_hover"
+                     >
+                    <img src={download} alt="Download" /> Download
+                  </button>
+                  <button
+                    className="again _scale_hover button white__button"
                     onClick={() => {
                       setLoadingPhase("idle");
                       setMinted(false);
@@ -114,7 +114,9 @@ const Chat = ({setChatTitle, setChatTitleClass}) => {
                       setChatTitle("Try GIFY AI");
                       setChatTitleClass("");
                     }}
-                  />
+                  >
+                    <img src={again} alt="Again" /> Again
+                  </button>
                 </div>
               </>
             )}
@@ -137,17 +139,14 @@ const Chat = ({setChatTitle, setChatTitleClass}) => {
       </div>
       <div className="chat__form">
         <input id="file" type="file" className="none" onChange={handleFileChange} />
-        <label htmlFor="file">
-          <img src={upload} alt="Upload" className="upload _scale_hover" />
+          <label htmlFor="file" className="upload white__button button _scale_hover">
+            <img src={upload} alt="" /> Upload
         </label>
         <img src={line} alt="Line" className="line" />
         <input className="chat__input" type="text" placeholder="Write your prompt" />
-        <img
-          src={animate}
-          alt="Animate"
-          className={`animate _scale_hover ${!uploadedImage ? 'disabled' : ''}`}
-          onClick={uploadedImage ? handleAnimateClick : null}
-        />
+        <button className={`animate animate black__button button  ${!uploadedImage ? 'disabled' : '_scale_hover'}`} onClick={uploadedImage ? handleAnimateClick : null}>
+            <img src={animate} alt="" /> Animate
+          </button>
       </div>
     </div>
   );

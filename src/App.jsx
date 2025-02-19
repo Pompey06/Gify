@@ -2,7 +2,6 @@ import './App.css'
 import 'aos/dist/aos.css';
 import content from './assets/content.png'
 import title from './assets/title.png'
-import try_ from './assets/try.png'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -27,6 +26,7 @@ import RoadMapItem from './Components/RoadMapItem'
 import Chat from './Components/Chat'
 import title_mb from './assets/title_mb.png'
 import Header from './Components/Header'
+import try_svg from './assets/try.svg'
 
 function App() {
    //const [showModal, setShowModal] = useState(false);
@@ -46,13 +46,17 @@ function App() {
             <Header />
             <section className="first">
                <div className="first__left">
-                  <img src={title} alt="" className="title hide-700" />
-                  <img src={title_mb} alt="" className="title_mb show-700" />
+                  <div className="title__wrap">
+                     <img src={title} alt="" className="title hide-700" />
+                     <img src={title_mb} alt="" className="title_mb show-700" />
+                     <div className="ai">AI-Powered</div>
+                     
+                  </div>
                   <p className="first__left_text show-700">for instant viral video creation and effortless NFT minting in one click</p>
-                  <a href="#app" ><img src={try_} alt="" className="try _scale_hover hide-700" /></a>
+                  <a href="#app" className='hide-700' ><button className="try _scale_hover">Try GIFY AI <img src={try_svg} alt="" /> </button></a>
                </div>
                <img  src={content} alt="" className="main_content" />
-               <a href="#app" ><img src={try_} alt="" className="try _scale_hover show-700" /></a>
+               <a href="#app" className='show-700' ><button className="try _scale_hover">Try GIFY AI <img src={try_svg} alt="" /> </button></a>
 
             </section>
             <div id="gallery" className="gallery_section">

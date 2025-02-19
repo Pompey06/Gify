@@ -67,9 +67,9 @@ const Header = () => {
         <a href="#faq" className="menu__link _scale_hover">FAQ</a>
       </nav>
       <div className="header__right header__full-menu">
-        <a href='#app'><button className="create _scale_hover white__button"><img src={create_svg} alt="" /> Create video</button></a>
+        <a href='#app'><button className="create _scale_hover button white__button"><img src={create_svg} alt="" /> Create video</button></a>
         <img src={line} alt="" className="line" />
-        <button className="connect _scale_hover black__button"><img src={connect_svg} alt="" /> Connect wallet</button>
+        <button className="connect _scale_hover button black__button"><img src={connect_svg} alt="" /> Connect wallet</button>
       </div>
 
       {/* Мобильное меню */}
@@ -101,8 +101,8 @@ const Header = () => {
             </a>
           </div>
           <div className="mobile-menu__right">
-            <a href='#app'><button className="create _scale_hover">Create video</button></a>
-            <button className="connect _scale_hover">connect wallet</button>
+            <a href='#app'><button className="create _scale_hover button white__button"><img src={create_svg} alt="" /> Create video</button></a>
+            <button className="connect _scale_hover button black__button"><img src={connect_svg} alt="" /> Connect wallet</button>
           </div>
         </div>
       )}

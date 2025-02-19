@@ -197,6 +197,19 @@ background-clip: text;
 
 .try {
    margin-top: 50px;
+   padding: 9px;
+   padding-left: 49px;
+   display: flex;
+   align-items: center;
+   gap: 35px;
+   border-radius: 118.75px;
+background: #22282B;
+   color: #FFF;
+font-family: Satoshi;
+font-size: 29.688px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.5; /* 150% */
 }
 
 .main_content {
@@ -668,25 +681,7 @@ background-clip: text;
 -webkit-text-fill-color: transparent;
 }
 
-.black__button {
-   color: #FFF;
-text-align: center;
-font-family: Satoshi;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.625;
-padding: 6px 20px;
-display: flex;
-align-items: center;
-gap: 12px;
-border-radius: 71.141px;
-border: 1.002px solid #F5F5F5;
-background: #22282B;
-}
-
-.white__button {
-   color: #22282B;
+.button {
    text-align: center;
    font-family: Satoshi;
    font-size: 16px;
@@ -698,7 +693,47 @@ background: #22282B;
    align-items: center;
    gap: 12px;
    border-radius: 71.141px;
+}
+
+.black__button {
+   color: #FFF;
+border: 1.002px solid #F5F5F5;
+background: #22282B;
+}
+
+.white__button {
+   color: #22282B;
    border: 1.002px solid #22282B;
+}
+
+.color__button {
+   color: #FFF;
+   border-radius: 71.141px;
+background: linear-gradient(91deg, #2A61E8 0.42%, #5B4DE8 35.5%, #FF4D68 95.91%), #22282B;
+}
+
+.title__wrap {
+   position: relative;
+}
+
+.ai {
+   position: absolute;
+   right: 0;
+   top: 0;
+   
+   color: #F5F5F5;
+text-align: center;
+font-family: Satoshi;
+font-size: 24.424px;
+font-style: normal;
+transform: rotate(-6.298deg);
+font-weight: 500;
+line-height: 120%; /* 29.308px */
+letter-spacing: -0.488px;
+padding: 9px 27px;
+max-width: 181px;
+border-radius: 106.854px;
+background: linear-gradient(95deg, #5581EF 3.82%, #8078D3 42.41%, #D46878 108.87%);
 }
 
 
@@ -715,8 +750,7 @@ background: #22282B;
    .title {
       width: 45vw;
    }.try {
-      width: 23vw;
-      min-width: 300px;
+
       margin-top: 0;
    }
 }
@@ -981,6 +1015,17 @@ max-width: 300px;
 @media  (max-width: 500px) {
    .gallery_section {
       margin-bottom: 20px;
+   }
+   .try {
+      gap: 30px;
+      font-size: 25.938px;
+      padding: 8px;
+      padding-left: 41px;
+   }
+   .try img {
+      width: 67px;
+      height: 67px;
+
    }
    .chat__window .icon.uploaded {
       max-width: 80vw;
